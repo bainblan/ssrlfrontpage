@@ -1,4 +1,5 @@
 import ThreeScene from "./components/ThreeScene";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
         </div>
 
         <div className="w-full max-w-9xl flex flex-col gap-120">
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl">
+          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-sm">
             The Small Satellite Research Laboratory (SSRL) is developing and launching new and innovative technologies into
             space by utilizing the CubeSat platform, a small-scale satellite that is designed for rapid integration and
             development. The lab is currently driving technological innovation at UGA through the building of 2 satellites,
@@ -53,65 +54,103 @@ export default function Home() {
             reach of its research, student involvement, and community enrichment.
           </section>
 
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-5xl">SPOC</h2>
-            <h3 className="text-2xl">Spectral Ocean Color Satellite</h3>
+          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/SPOC_patch.png"
+              alt="SPOC Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">SPOC</h2><br />
+            <h3 className="text-2xl">Spectral Ocean<br />Color Satellite</h3>
             <p className="text-sm">
-              The CubeSat is a new standard that allows students to access space like never before. We can design, build, and
-              control our own miniature spacecraft. CubeSat&apos;s are a class of small satellites composed of modular units
-              10cmx10cmx10cm in size, but the entire satellite cannot be larger than 1.33kg. Scroll down and let us give you
-              an example walk through of what is in a typical CubeSat.
+              SPOC is a NASA-funded CubeSat that uses a custom 16-band multispectral imager to monitor coastal ecosystems, ocean color, and water quality from Low Earth Orbit. It captures     imagery between 433-866nm to track vegetation health, phytoplankton dynamics, and suspended sediments in coastal regions. SPOC was launched to the ISS in 2020 and deployed via the Japanese Experiment   Module robotic arm.
             </p>
           </section>
 
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">Solar Panels</h2>
-            <p>
-              Like any other space craft, a CubeSat needs energy to survive. Solar panels provide the satellite with energy so
-              that it can power its systems. Solar panels are the standard of power generation in Low Earth Orbit.
+          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/MOCI_Patchv3.png"
+              alt="MOCI Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">MOCI</h2><br />
+            <h3 className="text-2xl">Multiview Onboard<br />Computational Imager</h3>
+            <p className="text-sm">
+              The MOCI mission shall
+              acquire imagery of the Earth&apos;s surface from (Low Earth Orbit) LEO
+              and perform near real time Structure from Motion (SfM) at a
+              landscape scale using custom algorithms and off the shelf, high
+              performance computational units. The MOCI mission will also
+              identify and map coastal phenomena while training students in STEM related fields.
+              Efficient data compression, feature detection, feature matching,
+              and SfM processing techniques of space-based imagery will be
+              performed on board the spacecraft as a proof-of-concept of high
+              performance, on board processing capabilities. 3D models produced
+              by the MOCI satellite will take the form of Digital Surface Models
+              (DSM) as their end product for quick data downlink.
             </p>
           </section>
 
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">The Frame</h2>
-            <p>
-              The frame of the CubeSat holds the parts of the satellite in place like the payloads and core avionics. The
-              frame also helps dissipate excess heat while the satellite is in orbit. When the satellite is launched, the
-              frame helps ensure that all of the parts stay in place and the system is structurally stable.
+          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/MEMESAT-1.png"
+              alt="MEMESat-1 Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">MEMESat-1</h2><br />
+            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement Satellite</h3>
+            <p className="text-sm">
+              The Mission for Education and Multimedia Engagement Satellite (MEMESat-1)
+              is a non-profit funded 2U satellite designed for K-12 education and STEM outreach.
+              This mission is funded by Let&apos;s Go to Space, a registered non-profit organization
+              dedicated to educating students across the world on space topics and radio systems.
+              MEMESat-1 aims to break down barriers to entry in the space industry and engage kids with
+              STEM concepts through innovative means. MEMESat-1 connects with students across the world by allowing users to send a meme
+              of their choice directly to the satellite.
             </p>
           </section>
 
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">ADCS</h2>
-            <p>
-              The ADCS is the satellite&apos;s Attitude Determination and Control System. This is what lets the CubeSat move around
-              and reorient itself in space. While not all CubeSat missions require an ADCS, most missions that require some
-              level of precision will.
+          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/Cosmo_patch.png"
+              alt="COSMO Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">COSMO</h2><br />
+            <h3 className="text-2xl">Center for Orbital<br />Satellite Mission Operations</h3>
+            <p className="text-sm">
+              The Center for Orbital Satellite Mission Operations (COSMO) serves as the communications center for the University of Georgia
+              Small Satellite Research Laboratory (SSRL). COSMO oversees ground station operations from our on-campus rotator installation;
+              along with mission radio support, testing, and implementations.
             </p>
           </section>
 
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">The Payload</h2>
-            <p>
-              The payload of the CubeSat is the instrument that gathers the primary scientific data in orbit. Every mission
-              has a different payload, so here we have an example camera payload. This system could image the Earth in fine
-              detail from Low Earth Orbit.
-            </p>
-          </section>
-
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">The Computer</h2>
-            <p>
-              At the heart of the CubeSat is the computer, but don&apos;t let its size fool you. Though it may be small, it can be
-              more powerful than the Apollo moon mission&apos;s flight computers. Thanks to smart phones, we are able to cram more
-              computational power into a small space than ever before. In some cases, these boards can even run a Linux
-              kernel. Our lab focuses on making these computers stronger and better suited for the space environment.
+          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/LEARNSat_MissionPatch.png"
+              alt="LEARNSat Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">LEARNSat</h2><br />
+            <h3 className="text-2xl">Low-Entry Accessible Research Network</h3>
+            <p className="text-sm">
+              The rapid growth of space technology has opened new frontiers, yet many K-12 institutions lack access to the resources that inspire innovation in this field. LEARNSat is changing that. Designed specifically for high school students, LEARNSat provides affordable CubeSat kits and a comprehensive curriculum, allowing students to build and launch their own satellites through suborbital missions using weather balloons.
             </p>
           </section>
         </div>
 
         <div className="min-h-screen w-full flex items-center justify-center">
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl">
+          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <h2 className="text-3xl">Our Spacecraft</h2>
             <p>The spacecraft that we design, build, and test in the Small Satellite Research Laboratory (as well as most
               CubeSats in general) are all similar to this design. If you are a student with an interest in spacecraft, why

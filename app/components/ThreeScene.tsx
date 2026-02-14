@@ -84,9 +84,9 @@ export default function ThreeScene() {
       })
     );
     scene.add(moon);
-    // Placed at radius 20, angle 120°
-    moon.position.x = Math.sin((2 * Math.PI) / 3) * 20;
-    moon.position.z = Math.cos((2 * Math.PI) / 3) * 20;
+    // Placed at radius 20, angle 90°
+    moon.position.x = Math.sin(Math.PI / 2) * 20;
+    moon.position.z = Math.cos(Math.PI / 2) * 20;
 
     // Moon Rover
     let rover: THREE.Object3D | null = null;
@@ -105,10 +105,21 @@ export default function ThreeScene() {
     gltfLoader.load("/meme_pepe/scene.gltf", (gltf) => {
       pepe = gltf.scene;
       pepe.scale.set(1, 1, 1);
-      // Placed at radius 20, angle 240°
-      pepe.position.x = Math.sin((4 * Math.PI) / 3) * 20;
-      pepe.position.z = Math.cos((4 * Math.PI) / 3) * 20;
+      // Placed at radius 20, angle 180°
+      pepe.position.x = Math.sin(Math.PI) * 20;
+      pepe.position.z = Math.cos(Math.PI) * 20;
       scene.add(pepe);
+    });
+
+    // Satellite Dish (planet)
+    let dish: THREE.Object3D | null = null;
+    gltfLoader.load("/satellite_dish/scene.gltf", (gltf) => {
+      dish = gltf.scene;
+      dish.scale.set(2, 2, 2);
+      // Placed at radius 20, angle 270°
+      dish.position.x = Math.sin((3 * Math.PI) / 2) * 20;
+      dish.position.z = Math.cos((3 * Math.PI) / 2) * 20;
+      scene.add(dish);
     });
 
     // Scroll Animation
@@ -142,6 +153,10 @@ export default function ThreeScene() {
 
       if (earth) {
         earth.rotation.y += 0.005;
+      }
+
+      if (dish) {
+        dish.rotation.y += 0.005;
       }
 
       if (pepe) {
