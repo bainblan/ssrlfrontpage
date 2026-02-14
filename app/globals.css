@@ -2,149 +2,14 @@
 @import url("https://fonts.googleapis.com/css?family=Armata");
 @import "tailwindcss";
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2vw;
-  min-height: 50px;
-  box-sizing: border-box;
-}
-
-.nav-brand img {
-  height: 40px;
-  width: auto;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  gap: 0;
-}
-
-.nav-links li a {
-  display: block;
-  color: #9d9d9d;
-  text-align: center;
-  padding: 14px 12px;
-  text-decoration: none;
-  font-family: 'Armata', sans-serif;
-  font-size: 12px;
-  transition: color 0.2s;
-}
-
-.nav-links li a:hover {
-  color: #fff;
-}
-
-.nav-links li a.donate-link {
-  background-color: white;
-  color: black;
-  font-weight: 800;
-  padding: 6px 14px;
-  margin-left: 4px;
-}
-
-.nav-links li a.donate-link:hover {
-  background-color: #ddd;
-}
-
 :root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
-  --spacing: 350px;
-
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-main {
-  width: 100vw;
-  color: white;
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  margin: 0px auto;
-  padding: 120px 0px;
-
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
 }
 
 h1, h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
-}
-
-header {
-  background: var(--dark-bg);
-  grid-column: 2 / span 5;
-  font-size: 2.5rem;
-  padding: 2rem;
-  margin-bottom: 1rem;
-}
-
-header img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-section {
-  grid-column: 2 / 8;
-  padding: 1rem;
-  background: var(--dark-bg);
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin-bottom: var(--spacing);
-}
-
-blockquote {
-  margin: 0;
-  padding: 0;
-  grid-column: 2 / span 9;
-  margin-bottom: var(--spacing);
-}
-
-blockquote p {
-  color: black;
-  background-color: white;
-  font-size: 4rem;
-  display: inline;
-  line-height: 1;
-}
-
-blockquote.logos {
-  grid-column: 2 / span 5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-blockquote.logos img {
-  flex: 1;
-  width: 0;
-  height: auto;
-  object-fit: contain;
-  padding: 0 0.5rem;
-}
-
-.left {
-  grid-column: 6 / 12;
 }

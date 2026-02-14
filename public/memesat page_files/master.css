@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Armata);
+@import url(https://fonts.googleapis.com/css?family=Exo+2|Lato);
+
+html body{
+  font-family: 'Lato', sans-serif;
+}
+a {
+  font-family: 'Armata', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, sans-serif;
+    color: #F6F6F6;
+}
+h1 {
+    font-size: 24px;
+}
+h2{
+  font-size: 32px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+h4{
+  font-size: 80px;
+  font-weight: bold;
+}
+h5 {
+    display: block;
+    font-size: 0.83em;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+p{
+  color: #F6F6F6;
+  font-size: 12px;
+}
+li{
+  color: #F6F6F6;
+}
+
+.hidden{
+  visibility: hidden !important;
+}
+.collapsing{
+  background-color: black;
+}
+.icon{
+  align-self: center;
+}
+.icon-box{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  margin-bottom: 42px;
+}
+.mission-header{
+  justify-content: center;
+  width: 100%;
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+.mission-box{
+  margin: 42px 0 64px;
+ 
+}
+hr{
+  border-color: white;
+}
+.contact-form{
+  flex-grow: 1;
+  min-width: 300px;
+  justify-content: space-between;
+  height: 100%;
+}
+.donate {
+  background-color: white;
+}
+#donateText {
+  color: black;
+  font-weight: 800;
+
+}
+
+/* bootstrap override */
+
+.drop-colors{
+  color: black !important;
+}
+
+.drop-colors li a{
+  color: black !important;
+}

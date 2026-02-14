@@ -1,0 +1,365 @@
+html {
+	width: 100%;
+}
+
+body {
+	background-color: #10141e;
+	background-size: 960px 540px;
+	z-index: 10;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+.stars {
+	background-image: url("/images/stars/Starsmid.png");
+	background-repeat: repeat;
+}
+section {
+	display: block;
+}
+.landing-inner {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+.landing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 50%;
+}
+.landing-img {
+	width: auto;
+	height: 250px;
+}
+.landing-img-sm {
+	height: 100px;
+	width: auto;
+}
+nav {
+	z-index: 10;
+}
+.navbar-nav > li > a {
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+.navbar {
+	padding: 0px 2vw;
+}
+.bg-dark {
+	background: rgba(0, 0, 0, 0.7) !important;
+}
+.navbar-nav {
+	right: 0px;
+}
+.nav-item {
+	padding: 4px 8px;
+}
+
+.navbar-brand {
+	padding: 0px;
+}
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.main-container {
+	max-width: 1140px;
+	width: 100%;
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#main {
+	padding-top: 60px;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin: auto;
+	max-width: 900px;
+}
+
+.home-main-container {
+	text-align: center;
+}
+.home-main-container p {
+	font-family: "Armata", sans-serif;
+	font-size: 12px;
+	color: #f6f6f6;
+}
+.navbar-links li {
+	float: left;
+}
+
+.navbar-links li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: #9d9d9d;
+}
+
+.navbar-links li a:hover {
+	color: #fff;
+}
+
+#tf-works {
+	margin-bottom: 32px;
+}
+
+#mc_embed_signup {
+	background: #fff;
+	clear: left;
+	padding: 10px;
+}
+#mc_embed_signup input {
+	border: 1px solid #abb0b2;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width: 100%;
+	margin-bottom: 4px;
+}
+.mc-field-group {
+	text-align: left;
+	font-size: 14px;
+}
+#research {
+	margin-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.row {
+	margin: 0px;
+}
+
+.ani-section-20 {
+	height: 20vh;
+}
+.ani-section-60 {
+	height: 60vh;
+}
+.ani-section-80 {
+	height: 90vh;
+}
+.ani-section-90 {
+	height: 90vh;
+}
+
+.ani-section {
+	height: 1200px;
+}
+.ani-section-end {
+	height: 400px;
+}
+.sat-part {
+	position: fixed;
+}
+#sk-cube-panel-r {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Right_Side_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -10;
+}
+#sk-cube-panel-l {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Left_Side_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -510;
+}
+#sk-cube-panel-b {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Back_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -500;
+}
+#sk-cube-panel-f {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Front_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -10;
+}
+#sk-cube-panel-t {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Top_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -10;
+}
+#sk-cube-panel-bo {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Bottom_Solar_Panel.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -500;
+}
+#sk-cube-frame-front {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Frame_Front.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -20;
+}
+#sk-cube-frame-back {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Frame_Back.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -500;
+}
+#sk-cube-frame-ext {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Frame_Extention.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -380;
+}
+#sk-cube-frame-end {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Back_Frame_End_Plate.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -500;
+}
+#sk-cube-ADCS {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/MAI100.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -400;
+}
+#sk-cube-ADCS-m {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Interface_Module.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -390;
+}
+#sk-cube-payload {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Nanocam.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -130;
+}
+#sk-cube-computer-mb {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/Motherboard.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -140;
+}
+#sk-cube-computer-ppm {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/PPM.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -150;
+}
+#sk-cube-computer-eps {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/EPS_Module.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -160;
+}
+#sk-cube-computer-gps {
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	background: url(/images/cubesat/parts/GPS_Module.png);
+	background-repeat: no-repeat;
+	background-size: 50%;
+	z-index: -170;
+}
+#cubesatImg {
+	opacity: 0;
+	top: 40%;
+	left: 27%;
+	height: inherit;
+	width: 100%;
+	height: 120%;
+	background: url(/images/cubesat/websitecubesatwhole.png);
+	background-repeat: no-repeat;
+	background-size: 40%;
+	z-index: -500;
+}
+#desktop-text p,
+#desktop-text h1,
+#desktop-text h2 {
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 699px) {
+	.narbar {
+		padding: 0px;
+	}
+	#earth-img {
+		display: none;
+	}
+	.navbar-nav {
+		background: rgba(0, 0, 0, 1) !important;
+		background-blend-mode: color;
+	}
+	.bg-dark {
+		background: rgba(0, 0, 0, 1) !important;
+	}
+}

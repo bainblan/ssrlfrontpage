@@ -148,5 +148,5 @@ export default function ThreeScene() {
     };
   }, []);
 
-  return <canvas id="bg" ref={canvasRef} />;
+  return <canvas id="bg" ref={canvasRef} className="fixed top-0 left-0 z-0" />;
 }
