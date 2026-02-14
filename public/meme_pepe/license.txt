@@ -1,0 +1,11 @@
+Model Information:
+* title:	Meme PePe
+* source:	https://sketchfab.com/3d-models/meme-pepe-d864ec4cbf5f45478393bf340fb4493e
+* author:	Zeus97 (https://sketchfab.com/Zeus97)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Meme PePe" (https://sketchfab.com/3d-models/meme-pepe-d864ec4cbf5f45478393bf340fb4493e) by Zeus97 (https://sketchfab.com/Zeus97) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

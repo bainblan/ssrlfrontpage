@@ -1,15 +1,14 @@
-@import url("https://use.typekit.net/jmk3xov.css");
-@import url("https://fonts.googleapis.com/css?family=Armata");
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: brandon-grotesque, sans-serif;
+  font-family: 'Azeret Mono', monospace;
   font-weight: 400;
   font-style: normal;
 }
 
 h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
+  font-family: 'Azeret Mono', monospace;
   font-weight: 700;
   font-style: normal;
 }

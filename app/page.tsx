@@ -9,15 +9,15 @@ export default function Home() {
           <img className="h-10 w-auto" src="/images/ssrl.svg" alt="SSRL Logo" />
         </div>
         <ul className="flex items-center m-0 p-0">
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Missions</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Media</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Publications</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Software</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Partners</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Our Organization</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Apply</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-[Armata,sans-serif] text-xs transition-colors duration-200 hover:text-white" href="#">Contact Us</a></li>
-          <li><a className="block font-[Armata,sans-serif] text-xs transition-colors duration-200 bg-white text-black font-extrabold px-3.5 py-1.5 ml-1 hover:bg-[#ddd]" href="#">Donate</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Missions</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Media</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Publications</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Software</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Partners</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Our Organization</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Apply</a></li>
+          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Contact Us</a></li>
+          <li><a className="block font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 bg-white text-black font-extrabold px-3.5 py-1.5 ml-1 hover:bg-[#ddd]" href="#">Donate</a></li>
         </ul>
       </nav>
 
@@ -54,8 +54,9 @@ export default function Home() {
           </section>
 
           <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl">
-            <h2 className="text-3xl">The CubeSat</h2>
-            <p>
+            <h2 className="text-5xl">SPOC</h2>
+            <h3 className="text-2xl">Spectral Ocean Color Satellite</h3>
+            <p className="text-sm">
               The CubeSat is a new standard that allows students to access space like never before. We can design, build, and
               control our own miniature spacecraft. CubeSat&apos;s are a class of small satellites composed of modular units
               10cmx10cmx10cm in size, but the entire satellite cannot be larger than 1.33kg. Scroll down and let us give you
