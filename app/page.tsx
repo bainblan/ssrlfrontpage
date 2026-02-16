@@ -41,20 +41,19 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="flex-1 w-0 h-auto object-contain px-2" src="/images/air_force_logo.png" alt="Air Force Logo" />
             </blockquote>
+            <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-sm">
+              The Small Satellite Research Laboratory (SSRL) is developing and launching new and innovative technologies into
+              space by utilizing the CubeSat platform, a small-scale satellite that is designed for rapid integration and
+              development. The lab is currently driving technological innovation at UGA through the building of 2 satellites,
+              funded by the Air Force and NASA. The UGA SSRL was founded in 2016, primarily as an avenue for undergraduates to
+              design, build, and test space-ready components. Over the past three years, the SSRL has steadily increased the
+              reach of its research, student involvement, and community enrichment.
+            </section>
           </div>
         </div>
 
         <div className="w-full max-w-9xl flex flex-col gap-120">
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-sm">
-            The Small Satellite Research Laboratory (SSRL) is developing and launching new and innovative technologies into
-            space by utilizing the CubeSat platform, a small-scale satellite that is designed for rapid integration and
-            development. The lab is currently driving technological innovation at UGA through the building of 2 satellites,
-            funded by the Air Force and NASA. The UGA SSRL was founded in 2016, primarily as an avenue for undergraduates to
-            design, build, and test space-ready components. Over the past three years, the SSRL has steadily increased the
-            reach of its research, student involvement, and community enrichment.
-          </section>
-
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="spoc-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
               className="absolute top-2 right-4 w-36 h-36 object-contain"
               src="/images/SPOC_patch.png"
@@ -151,10 +150,9 @@ export default function Home() {
 
         <div className="min-h-screen w-full flex items-center justify-center">
           <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
-            <h2 className="text-3xl">Our Spacecraft</h2>
-            <p>The spacecraft that we design, build, and test in the Small Satellite Research Laboratory (as well as most
-              CubeSats in general) are all similar to this design. If you are a student with an interest in spacecraft, why
-              don&apos;t you join us?
+            <h2 className="text-3xl">Thank You!</h2>
+            <p>We are continuing to break new ground in the Small Satellite Research Laboratory. 
+              If you are a student with an interest in spacecraft, a potential partner, or just want to learn more, please reach out to us! We are always looking for new collaborators and would love to hear from you.
             </p>
           </section>
         </div>
