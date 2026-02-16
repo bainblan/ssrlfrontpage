@@ -104,7 +104,7 @@ export default function Home() {
               height={144}
             />
             <h2 className="text-5xl">MEMESat-1</h2><br />
-            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement Satellite</h3>
+            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement<br />Satellite</h3>
             <p className="text-sm">
               The Mission for Education and Multimedia Engagement Satellite (MEMESat-1)
               is a non-profit funded 2U satellite designed for K-12 education and STEM outreach.
@@ -142,7 +142,7 @@ export default function Home() {
               height={144}
             />
             <h2 className="text-5xl">LEARNSat</h2><br />
-            <h3 className="text-2xl">Low-Entry Accessible Research Network</h3>
+            <h3 className="text-2xl">Low-Entry Accessible<br />Research Network</h3>
             <p className="text-sm">
               The rapid growth of space technology has opened new frontiers, yet many K-12 institutions lack access to the resources that inspire innovation in this field. LEARNSat is changing that. Designed specifically for high school students, LEARNSat provides affordable CubeSat kits and a comprehensive curriculum, allowing students to build and launch their own satellites through suborbital missions using weather balloons.
             </p>

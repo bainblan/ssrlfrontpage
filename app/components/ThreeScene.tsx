@@ -23,13 +23,14 @@ export default function ThreeScene() {
     const renderer = new THREE.WebGLRenderer({ canvas });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
-    camera.position.setX(-3);
+    camera.position.setZ(5);
+    camera.position.setX(5);
+    camera.position.setY(15);
 
-    // Lights
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(5, 5, 5);
-    const ambientLight = new THREE.AmbientLight(0xffffff);
+    // Lights — point light at the origin (the sun)
+    const pointLight = new THREE.PointLight(0xffffff, 2);
+    pointLight.position.set(0, 0, 0);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(pointLight, ambientLight);
 
     // Stars
@@ -54,11 +55,28 @@ export default function ThreeScene() {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load("/scene.gltf", (gltf) => {
       earth = gltf.scene;
-      earth.scale.set(0.75, 0.75, 0.75);
-      // Placed at radius 20, angle 0°
-      earth.position.x = 0;
-      earth.position.z = 20;
+      earth.scale.set(0.5, 0.5, 0.5);
+      // Placed at radius 40, angle 0° (of 5)
+      earth.position.x = Math.sin(0) * 40;
+      earth.position.z = Math.cos(0) * 40;
       scene.add(earth);
+    });
+
+    // Sun model at the origin
+    let sun: THREE.Object3D | null = null;
+    gltfLoader.load("/simple_sun/scene.gltf", (gltf) => {
+      sun = gltf.scene;
+      sun.scale.set(3, 3, 3);
+      sun.position.set(0, 0, 0);
+      sun.traverse((child) => {
+        if ((child as THREE.Mesh).isMesh) {
+          const mesh = child as THREE.Mesh;
+          const mat = mesh.material as THREE.MeshStandardMaterial;
+          mat.emissive = new THREE.Color(0xffaa33);
+          mat.emissiveIntensity = 1.5;
+        }
+      });
+      scene.add(sun);
     });
 
     // Satellite
@@ -84,9 +102,9 @@ export default function ThreeScene() {
       })
     );
     scene.add(moon);
-    // Placed at radius 20, angle 90°
-    moon.position.x = Math.sin(Math.PI / 2) * 20;
-    moon.position.z = Math.cos(Math.PI / 2) * 20;
+    // Placed at radius 40, angle 72° (2 of 5)
+    moon.position.x = Math.sin((2 * Math.PI) / 5) * 40;
+    moon.position.z = Math.cos((2 * Math.PI) / 5) * 40;
 
     // Moon Rover
     let rover: THREE.Object3D | null = null;
@@ -104,10 +122,11 @@ export default function ThreeScene() {
     let pepe: THREE.Object3D | null = null;
     gltfLoader.load("/meme_pepe/scene.gltf", (gltf) => {
       pepe = gltf.scene;
-      pepe.scale.set(1, 1, 1);
-      // Placed at radius 20, angle 180°
-      pepe.position.x = Math.sin(Math.PI) * 20;
-      pepe.position.z = Math.cos(Math.PI) * 20;
+      pepe.scale.set(2, 2, 2);
+      // Placed at radius 40, angle 144° (3 of 5)
+      pepe.position.x = Math.sin((4 * Math.PI) / 5) * 40;
+      pepe.position.z = Math.cos((4 * Math.PI) / 5) * 40;
+      pepe.position.y = -3;
       scene.add(pepe);
     });
 
@@ -115,12 +134,32 @@ export default function ThreeScene() {
     let dish: THREE.Object3D | null = null;
     gltfLoader.load("/satellite_dish/scene.gltf", (gltf) => {
       dish = gltf.scene;
-      dish.scale.set(2, 2, 2);
-      // Placed at radius 20, angle 270°
-      dish.position.x = Math.sin((3 * Math.PI) / 2) * 20;
-      dish.position.z = Math.cos((3 * Math.PI) / 2) * 20;
+      dish.scale.set(4, 4, 4);
+      // Placed at radius 40, angle 216° (4 of 5)
+      dish.position.x = Math.sin((6 * Math.PI) / 5) * 40;
+      dish.position.z = Math.cos((6 * Math.PI) / 5) * 40;
+      dish.position.y = -4;
       scene.add(dish);
     });
+
+    // Retro Computer (planet)
+    let computer: THREE.Object3D | null = null;
+    gltfLoader.load(
+      "/retro_computer.glb",
+      (gltf) => {
+        computer = gltf.scene;
+        computer.scale.set(0.1, 0.1, 0.1);
+        // Placed at radius 40, angle 288° (5 of 5) — between dish and earth
+        computer.position.x = Math.sin((8 * Math.PI) / 5) * 40;
+        computer.position.z = Math.cos((8 * Math.PI) / 5) * 40;
+        computer.position.y = -3;
+        scene.add(computer);
+      },
+      undefined,
+      (error) => {
+        console.error("Error loading computer model:", error);
+      }
+    );
 
     // Scroll Animation
     function moveCamera() {
@@ -131,13 +170,9 @@ export default function ThreeScene() {
         earth.rotation.y += 0.02;
       }
 
-      // Orbit camera around the origin based on scroll
-      const cameraOrbitRadius = 30;
-      const angle = t * -0.0005;
-      camera.position.x = Math.sin(angle) * cameraOrbitRadius;
-      camera.position.z = Math.cos(angle) * cameraOrbitRadius;
-      // Always look at the origin
-      camera.lookAt(0, 0, 0);
+      camera.position.z = 50 + t * -0.01;
+      camera.position.x = t * -0.0002;
+      camera.rotation.y = t * -0.0002;
     }
 
     document.body.onscroll = moveCamera;
@@ -151,6 +186,10 @@ export default function ThreeScene() {
 
       moon.rotation.y += 0.005;
 
+      if (sun) {
+        sun.rotation.y += 0.003;
+      }
+
       if (earth) {
         earth.rotation.y += 0.005;
       }
@@ -161,6 +200,10 @@ export default function ThreeScene() {
 
       if (pepe) {
         pepe.rotation.y += 0.005;
+      }
+
+      if (computer) {
+        computer.rotation.y += 0.005;
       }
 
       if (satellite && earth) {
