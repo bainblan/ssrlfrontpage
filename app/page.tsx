@@ -9,11 +9,11 @@ export default function Home() {
 
       <ThreeScene />
 
-      <main className="w-full text-white z-[99] absolute flex flex-col items-center gap-120 px-[8%] py-4">
+      <main className="w-full text-white z-[99] absolute flex flex-col items-center gap-40 md:gap-120 px-[4%] md:px-[8%] py-4">
 
         <div className="min-h-screen flex w-full items-center">
           <div className="max-w-2xl flex flex-col gap-2">
-            <header className="bg-gray-500/80 rounded-lg p-8">
+            <header className="bg-gray-500/80 rounded-lg p-4 md:p-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="w-full h-auto block" src="/ssrl_logo_long-new.png" alt="UGA Small Satellite Research Laboratory" />
             </header>
@@ -37,17 +37,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full max-w-9xl flex flex-col gap-160">
+        <div className="w-full max-w-9xl flex flex-col gap-40 md:gap-160">
           <section id="spoc-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/SPOC_patch.png"
               alt="SPOC Patch"
               width={144}
               height={144}
             />
-            <h2 className="text-5xl">SPOC</h2><br />
-            <h3 className="text-2xl">Spectral Ocean<br />Color Satellite</h3>
+            <h2 className="text-3xl sm:text-5xl">SPOC</h2><br />
+            <h3 className="text-xl sm:text-2xl">Spectral Ocean<br />Color Satellite</h3>
             <p className="text-sm">
               SPOC is a NASA-funded CubeSat that uses a custom 16-band multispectral imager to monitor coastal ecosystems, ocean color, and water quality from Low Earth Orbit. It captures     imagery between 433-866nm to track vegetation health, phytoplankton dynamics, and suspended sediments in coastal regions. SPOC was launched to the ISS in 2020 and deployed via the Japanese Experiment   Module robotic arm.
             </p>
@@ -55,14 +55,14 @@ export default function Home() {
 
           <section id="learnsat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/LEARNSat_MissionPatch.png"
               alt="LEARNSat Patch"
               width={144}
               height={144}
             />
-            <h2 className="text-5xl">LEARNSat</h2><br />
-            <h3 className="text-2xl">Low-Entry Accessible<br />Research Network</h3>
+            <h2 className="text-3xl sm:text-5xl">LEARNSat</h2><br />
+            <h3 className="text-xl sm:text-2xl">Low-Entry Accessible<br />Research Network</h3>
             <p className="text-sm">
               The rapid growth of space technology has opened new frontiers, yet many K-12 institutions lack access to the resources that inspire innovation in this field. LEARNSat is changing that. Designed specifically for high school students, LEARNSat provides affordable CubeSat kits and a comprehensive curriculum, allowing students to build and launch their own satellites through suborbital missions using weather balloons.
             </p>
@@ -70,14 +70,14 @@ export default function Home() {
 
           <section id="cosmo-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/Cosmo_patch.png"
               alt="COSMO Patch"
               width={144}
               height={144}
             />
-            <h2 className="text-5xl">COSMO</h2><br />
-            <h3 className="text-2xl">Center for Orbital<br />Satellite Mission Operations</h3>
+            <h2 className="text-3xl sm:text-5xl">COSMO</h2><br />
+            <h3 className="text-xl sm:text-2xl">Center for Orbital<br />Satellite Mission Operations</h3>
             <p className="text-sm">
               The Center for Orbital Satellite Mission Operations (COSMO) serves as the communications center for the University of Georgia
               Small Satellite Research Laboratory (SSRL). COSMO oversees ground station operations from our on-campus rotator installation;
@@ -87,14 +87,14 @@ export default function Home() {
 
           <section id="memesat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/MEMESAT-1.png"
               alt="MEMESat-1 Patch"
               width={144}
               height={144}
             />
-            <h2 className="text-5xl">MEMESat-1</h2><br />
-            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement<br />Satellite</h3>
+            <h2 className="text-3xl sm:text-5xl">MEMESat-1</h2><br />
+            <h3 className="text-xl sm:text-2xl">Mission for Education<br />and Multimedia Engagement<br />Satellite</h3>
             <p className="text-sm">
               The Mission for Education and Multimedia Engagement Satellite (MEMESat-1)
               is a non-profit funded 2U satellite designed for K-12 education and STEM outreach.
@@ -108,14 +108,14 @@ export default function Home() {
 
           <section id="moci-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/MOCI_Patchv3.png"
               alt="MOCI Patch"
               width={144}
               height={144}
             />
-            <h2 className="text-5xl">MOCI</h2><br />
-            <h3 className="text-2xl">Multiview Onboard<br />Computational Imager</h3>
+            <h2 className="text-3xl sm:text-5xl">MOCI</h2><br />
+            <h3 className="text-xl sm:text-2xl">Multiview Onboard<br />Computational Imager</h3>
             <p className="text-sm">
               The MOCI mission shall
               acquire imagery of the Earth&apos;s surface from (Low Earth Orbit) LEO
@@ -134,8 +134,8 @@ export default function Home() {
         </div>
 
         <div className="min-h-screen w-full flex items-end justify-center">
-          <section id="thankyou-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg flex flex-col items-center text-xl relative">
-            <h2 className="text-3xl">Thank You!</h2>
+          <section id="thankyou-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg flex flex-col items-center text-base sm:text-xl relative">
+            <h2 className="text-2xl sm:text-3xl">Thank You!</h2>
             <p>We are continuing to break new ground in the Small Satellite Research Laboratory.
               If you are a student with an interest in spacecraft, a potential partner, or just want to learn more, please reach out to us! We are always looking for new collaborators and would love to hear from you.
             </p>

@@ -167,7 +167,7 @@ export default function ThreeScene() {
     // Visit order: Earth(0), Moon(4), Dish(3), Pepe(2), Computer(1)
     const visitOrder = [0, 4, 3, 2, 1];
     const cameraRadius = 30;
-    const tangentOffset = 5;
+    const tangentOffset = window.innerWidth < 768 ? 1 : 5;
 
     let solarOrbitAngle = 0;
     const solarOrbitSpeed = 0.002;
