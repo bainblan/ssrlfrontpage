@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className="w-full text-white z-[99] absolute flex flex-col items-center gap-40 md:gap-120 px-[4%] md:px-[8%] py-4">
 
-        <div className="min-h-screen flex w-full items-center">
+        <div className="min-h-screen flex w-full items-center snap-start">
           <div className="max-w-2xl flex flex-col gap-2">
             <header className="bg-gray-500/80 rounded-lg p-4 md:p-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 
         <div className="w-full max-w-9xl flex flex-col gap-40 md:gap-160">
-          <section id="spoc-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="spoc-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative snap-center">
             <Image
               className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/SPOC_patch.png"
@@ -53,7 +53,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section id="learnsat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="learnsat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative snap-center">
             <Image
               className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/LEARNSat_MissionPatch.png"
@@ -68,7 +68,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section id="cosmo-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="cosmo-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative snap-center">
             <Image
               className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/Cosmo_patch.png"
@@ -85,7 +85,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section id="memesat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="memesat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative snap-center">
             <Image
               className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/MEMESAT-1.png"
@@ -106,7 +106,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section id="moci-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="moci-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative snap-center">
             <Image
               className="float-right ml-3 mb-2 w-20 h-20 sm:w-36 sm:h-36 object-contain"
               src="/images/MOCI_Patchv3.png"
@@ -133,7 +133,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="min-h-screen w-full flex items-end justify-center">
+        <div className="min-h-screen w-full flex items-end justify-center snap-end mt-80 md:mt-160">
           <section id="thankyou-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg flex flex-col items-center text-base sm:text-xl relative">
             <h2 className="text-2xl sm:text-3xl">Thank You!</h2>
             <p>We are continuing to break new ground in the Small Satellite Research Laboratory.
