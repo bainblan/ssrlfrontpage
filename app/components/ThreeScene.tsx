@@ -26,7 +26,7 @@ export default function ThreeScene() {
     // Initial position set by moveCamera() below
 
     // Lights — point light at the origin (the sun)
-    const pointLight = new THREE.PointLight(0xffffff, 2);
+    const pointLight = new THREE.PointLight(0xffddaa, 2);
     pointLight.position.set(0, 0, 0);
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(pointLight, ambientLight);
@@ -60,22 +60,23 @@ export default function ThreeScene() {
       scene.add(earth);
     });
 
-    // Sun model at the origin
-    let sun: THREE.Object3D | null = null;
-    gltfLoader.load("/simple_sun/scene.gltf", (gltf) => {
-      sun = gltf.scene;
-      sun.scale.set(3, 3, 3);
-      sun.position.set(0, 0, 0);
-      sun.traverse((child) => {
-        if ((child as THREE.Mesh).isMesh) {
-          const mesh = child as THREE.Mesh;
-          const mat = mesh.material as THREE.MeshStandardMaterial;
-          mat.emissive = new THREE.Color(0xffaa33);
-          mat.emissiveIntensity = 1.5;
-        }
-      });
-      scene.add(sun);
+    // Sun — procedural glowing sphere at the origin
+    const sunGeometry = new THREE.SphereGeometry(4, 64, 64);
+    const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffcc33 });
+    const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+    sun.position.set(0, 0, 0);
+    scene.add(sun);
+
+    // Glow halo — slightly larger translucent BackSide sphere
+    const glowGeometry = new THREE.SphereGeometry(5.5, 64, 64);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffaa33,
+      transparent: true,
+      opacity: 0.15,
+      side: THREE.BackSide,
     });
+    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+    sun.add(glowMesh);
 
     // Satellite
     let satellite: THREE.Object3D | null = null;
@@ -124,7 +125,7 @@ export default function ThreeScene() {
       // Placed at radius 40, angle 144° (3 of 5)
       pepe.position.x = Math.sin((4 * Math.PI) / 5) * 40;
       pepe.position.z = Math.cos((4 * Math.PI) / 5) * 40;
-      pepe.position.y = -3;
+      pepe.position.y = -4;
       scene.add(pepe);
     });
 
@@ -132,11 +133,11 @@ export default function ThreeScene() {
     let dish: THREE.Object3D | null = null;
     gltfLoader.load("/satellite_dish/scene.gltf", (gltf) => {
       dish = gltf.scene;
-      dish.scale.set(4, 4, 4);
+      dish.scale.set(3, 3, 3);
       // Placed at radius 40, angle 216° (4 of 5)
       dish.position.x = Math.sin((6 * Math.PI) / 5) * 40;
       dish.position.z = Math.cos((6 * Math.PI) / 5) * 40;
-      dish.position.y = -4;
+      dish.position.y = -5;
       scene.add(dish);
     });
 
@@ -146,7 +147,7 @@ export default function ThreeScene() {
       "/retro_computer.glb",
       (gltf) => {
         computer = gltf.scene;
-        computer.scale.set(0.1, 0.1, 0.1);
+        computer.scale.set(0.075, 0.075, 0.075);
         // Placed at radius 40, angle 72° (2 of 5)
         computer.position.x = Math.sin((2 * Math.PI) / 5) * 40;
         computer.position.z = Math.cos((2 * Math.PI) / 5) * 40;
@@ -168,27 +169,37 @@ export default function ThreeScene() {
     const cameraRadius = 30;
     const tangentOffset = 5;
 
-    const waypoints = visitOrder.map((pi) => {
-      const angle = allAngles[pi];
-      // Radial direction (outward from origin)
-      const rx = Math.sin(angle);
-      const rz = Math.cos(angle);
-      // Tangent direction (CW) — shifts lookAt so planet appears on the right
-      const tx = rz;
-      const tz = -rx;
+    let solarOrbitAngle = 0;
+    const solarOrbitSpeed = 0.002;
 
-      const planetX = rx * 40;
-      const planetZ = rz * 40;
+    function getWaypoints() {
+      const wps = visitOrder.map((pi) => {
+        const angle = allAngles[pi] + solarOrbitAngle;
+        const rx = Math.sin(angle);
+        const rz = Math.cos(angle);
+        const tx = rz;
+        const tz = -rx;
+        const planetX = rx * 40;
+        const planetZ = rz * 40;
 
-      return {
-        pos: new THREE.Vector3(rx * cameraRadius, 1, rz * cameraRadius),
-        lookAt: new THREE.Vector3(
-          planetX + tx * tangentOffset,
-          allY[pi],
-          planetZ + tz * tangentOffset
-        ),
-      };
-    });
+        return {
+          pos: new THREE.Vector3(rx * cameraRadius, 1, rz * cameraRadius),
+          lookAt: new THREE.Vector3(
+            planetX + tx * tangentOffset,
+            allY[pi],
+            planetZ + tz * tangentOffset
+          ),
+        };
+      });
+
+      // Final waypoint: static elevated bird's-eye view of the whole solar system
+      wps.push({
+        pos: new THREE.Vector3(0, 60, 0),
+        lookAt: new THREE.Vector3(0, 0, 0),
+      });
+
+      return wps;
+    }
 
     function smoothstep(t: number): number {
       return t * t * (3 - 2 * t);
@@ -196,34 +207,57 @@ export default function ThreeScene() {
 
     const lookAtTarget = new THREE.Vector3();
 
+    // Section IDs mapped to waypoints in order:
+    // Earth←SPOC, Moon←LEARNSat, Dish←COSMO, Pepe←MEMESat, Computer←MOCI, Sun←ThankYou
+    const sectionIds = [
+      "spoc-section",
+      "learnsat-section",
+      "cosmo-section",
+      "memesat-section",
+      "moci-section",
+      "thankyou-section",
+    ];
+
     function moveCamera() {
+      const waypoints = getWaypoints();
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const halfVH = window.innerHeight / 2;
 
-      // Hold at Earth until SPOC section reaches vertical center of screen
-      const spocEl = document.getElementById("spoc-section");
-      const spocThreshold = spocEl
-        ? spocEl.offsetTop - window.innerHeight / 2
-        : 0;
+      // Compute the scroll position where each section hits screen center
+      const thresholds = sectionIds.map((id) => {
+        const el = document.getElementById(id);
+        return el ? el.offsetTop + el.offsetHeight / 2 - halfVH : 0;
+      });
 
-      let progress: number;
-      if (scrollTop <= spocThreshold) {
-        progress = 0;
-      } else {
-        const remaining = maxScroll - spocThreshold;
-        progress = Math.min((scrollTop - spocThreshold) / remaining, 1);
+      // Before first threshold — stay at Earth
+      if (scrollTop <= thresholds[0]) {
+        camera.position.copy(waypoints[0].pos);
+        lookAtTarget.copy(waypoints[0].lookAt);
+        camera.lookAt(lookAtTarget);
+        return;
       }
 
-      const segments = waypoints.length - 1;
-      const scaled = progress * segments;
-      const idx = Math.min(Math.floor(scaled), segments - 1);
-      const localT = smoothstep(scaled - idx);
+      // After last threshold — stay at Computer
+      if (scrollTop >= thresholds[thresholds.length - 1]) {
+        const last = waypoints[waypoints.length - 1];
+        camera.position.copy(last.pos);
+        lookAtTarget.copy(last.lookAt);
+        camera.lookAt(lookAtTarget);
+        return;
+      }
 
-      const from = waypoints[idx];
-      const to = waypoints[Math.min(idx + 1, segments)];
+      // Find which segment we're in
+      let idx = 0;
+      for (let i = 0; i < thresholds.length - 1; i++) {
+        if (scrollTop >= thresholds[i]) idx = i;
+      }
 
-      camera.position.lerpVectors(from.pos, to.pos, localT);
-      lookAtTarget.lerpVectors(from.lookAt, to.lookAt, localT);
+      const segStart = thresholds[idx];
+      const segEnd = thresholds[idx + 1];
+      const localT = smoothstep((scrollTop - segStart) / (segEnd - segStart));
+
+      camera.position.lerpVectors(waypoints[idx].pos, waypoints[idx + 1].pos, localT);
+      lookAtTarget.lerpVectors(waypoints[idx].lookAt, waypoints[idx + 1].lookAt, localT);
       camera.lookAt(lookAtTarget);
     }
 
@@ -236,11 +270,31 @@ export default function ThreeScene() {
     function animate() {
       animationId = requestAnimationFrame(animate);
 
-      moon.rotation.y += 0.005;
+      // Advance solar orbit
+      solarOrbitAngle += solarOrbitSpeed;
 
-      if (sun) {
-        sun.rotation.y += 0.003;
+      // Update planet orbital positions
+      if (earth) {
+        earth.position.x = Math.sin(allAngles[0] + solarOrbitAngle) * 40;
+        earth.position.z = Math.cos(allAngles[0] + solarOrbitAngle) * 40;
       }
+      if (computer) {
+        computer.position.x = Math.sin(allAngles[1] + solarOrbitAngle) * 40;
+        computer.position.z = Math.cos(allAngles[1] + solarOrbitAngle) * 40;
+      }
+      if (pepe) {
+        pepe.position.x = Math.sin(allAngles[2] + solarOrbitAngle) * 40;
+        pepe.position.z = Math.cos(allAngles[2] + solarOrbitAngle) * 40;
+      }
+      if (dish) {
+        dish.position.x = Math.sin(allAngles[3] + solarOrbitAngle) * 40;
+        dish.position.z = Math.cos(allAngles[3] + solarOrbitAngle) * 40;
+      }
+      moon.position.x = Math.sin(allAngles[4] + solarOrbitAngle) * 40;
+      moon.position.z = Math.cos(allAngles[4] + solarOrbitAngle) * 40;
+
+      // Self-rotation
+      moon.rotation.y += 0.005;
 
       if (earth) {
         earth.rotation.y += 0.005;
@@ -251,7 +305,7 @@ export default function ThreeScene() {
       }
 
       if (pepe) {
-        pepe.rotation.y += 0.005;
+        pepe.rotation.y += 0.01;
       }
 
       if (computer) {
@@ -281,6 +335,9 @@ export default function ThreeScene() {
         rover.rotation.x = Math.PI / 2;
         rover.rotation.z = roverAngle - Math.PI / 2;
       }
+
+      // Update camera to track orbiting planets
+      moveCamera();
 
       renderer.render(scene, camera);
     }

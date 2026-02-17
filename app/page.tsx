@@ -52,7 +52,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full max-w-9xl flex flex-col gap-120">
+        <div className="w-full max-w-9xl flex flex-col gap-160">
           <section id="spoc-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
               className="absolute top-2 right-4 w-36 h-36 object-contain"
@@ -68,7 +68,60 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+          <section id="learnsat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/LEARNSat_MissionPatch.png"
+              alt="LEARNSat Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">LEARNSat</h2><br />
+            <h3 className="text-2xl">Low-Entry Accessible<br />Research Network</h3>
+            <p className="text-sm">
+              The rapid growth of space technology has opened new frontiers, yet many K-12 institutions lack access to the resources that inspire innovation in this field. LEARNSat is changing that. Designed specifically for high school students, LEARNSat provides affordable CubeSat kits and a comprehensive curriculum, allowing students to build and launch their own satellites through suborbital missions using weather balloons.
+            </p>
+          </section>
+
+          <section id="cosmo-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/Cosmo_patch.png"
+              alt="COSMO Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">COSMO</h2><br />
+            <h3 className="text-2xl">Center for Orbital<br />Satellite Mission Operations</h3>
+            <p className="text-sm">
+              The Center for Orbital Satellite Mission Operations (COSMO) serves as the communications center for the University of Georgia
+              Small Satellite Research Laboratory (SSRL). COSMO oversees ground station operations from our on-campus rotator installation;
+              along with mission radio support, testing, and implementations.
+            </p>
+          </section>
+
+          <section id="memesat-section" className="max-w-2xl self-start p-4 bg-gray-500/80 rounded-lg text-xl relative">
+            <Image
+              className="absolute top-2 right-4 w-36 h-36 object-contain"
+              src="/images/MEMESAT-1.png"
+              alt="MEMESat-1 Patch"
+              width={144}
+              height={144}
+            />
+            <h2 className="text-5xl">MEMESat-1</h2><br />
+            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement<br />Satellite</h3>
+            <p className="text-sm">
+              The Mission for Education and Multimedia Engagement Satellite (MEMESat-1)
+              is a non-profit funded 2U satellite designed for K-12 education and STEM outreach.
+              This mission is funded by Let&apos;s Go to Space, a registered non-profit organization
+              dedicated to educating students across the world on space topics and radio systems.
+              MEMESat-1 aims to break down barriers to entry in the space industry and engage kids with
+              STEM concepts through innovative means. MEMESat-1 connects with students across the world by allowing users to send a meme
+              of their choice directly to the satellite.
+            </p>
+          </section>
+
+          <section id="moci-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
             <Image
               className="absolute top-2 right-4 w-36 h-36 object-contain"
               src="/images/MOCI_Patchv3.png"
@@ -93,65 +146,12 @@ export default function Home() {
               (DSM) as their end product for quick data downlink.
             </p>
           </section>
-
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
-            <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
-              src="/images/MEMESAT-1.png"
-              alt="MEMESat-1 Patch"
-              width={144}
-              height={144}
-            />
-            <h2 className="text-5xl">MEMESat-1</h2><br />
-            <h3 className="text-2xl">Mission for Education<br />and Multimedia Engagement<br />Satellite</h3>
-            <p className="text-sm">
-              The Mission for Education and Multimedia Engagement Satellite (MEMESat-1)
-              is a non-profit funded 2U satellite designed for K-12 education and STEM outreach.
-              This mission is funded by Let&apos;s Go to Space, a registered non-profit organization
-              dedicated to educating students across the world on space topics and radio systems.
-              MEMESat-1 aims to break down barriers to entry in the space industry and engage kids with
-              STEM concepts through innovative means. MEMESat-1 connects with students across the world by allowing users to send a meme
-              of their choice directly to the satellite.
-            </p>
-          </section>
-
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
-            <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
-              src="/images/Cosmo_patch.png"
-              alt="COSMO Patch"
-              width={144}
-              height={144}
-            />
-            <h2 className="text-5xl">COSMO</h2><br />
-            <h3 className="text-2xl">Center for Orbital<br />Satellite Mission Operations</h3>
-            <p className="text-sm">
-              The Center for Orbital Satellite Mission Operations (COSMO) serves as the communications center for the University of Georgia
-              Small Satellite Research Laboratory (SSRL). COSMO oversees ground station operations from our on-campus rotator installation;
-              along with mission radio support, testing, and implementations.
-            </p>
-          </section>
-
-          <section className="max-w-2xl self-end p-4 bg-gray-500/80 rounded-lg text-xl relative">
-            <Image
-              className="absolute top-2 right-4 w-36 h-36 object-contain"
-              src="/images/LEARNSat_MissionPatch.png"
-              alt="LEARNSat Patch"
-              width={144}
-              height={144}
-            />
-            <h2 className="text-5xl">LEARNSat</h2><br />
-            <h3 className="text-2xl">Low-Entry Accessible<br />Research Network</h3>
-            <p className="text-sm">
-              The rapid growth of space technology has opened new frontiers, yet many K-12 institutions lack access to the resources that inspire innovation in this field. LEARNSat is changing that. Designed specifically for high school students, LEARNSat provides affordable CubeSat kits and a comprehensive curriculum, allowing students to build and launch their own satellites through suborbital missions using weather balloons.
-            </p>
-          </section>
         </div>
 
-        <div className="min-h-screen w-full flex items-center justify-center">
-          <section className="max-w-2xl p-4 bg-gray-500/80 rounded-lg text-xl relative">
+        <div className="min-h-screen w-full flex items-end justify-center">
+          <section id="thankyou-section" className="max-w-2xl p-4 bg-gray-500/80 rounded-lg flex flex-col items-center text-xl relative">
             <h2 className="text-3xl">Thank You!</h2>
-            <p>We are continuing to break new ground in the Small Satellite Research Laboratory. 
+            <p>We are continuing to break new ground in the Small Satellite Research Laboratory.
               If you are a student with an interest in spacecraft, a potential partner, or just want to learn more, please reach out to us! We are always looking for new collaborators and would love to hear from you.
             </p>
           </section>
