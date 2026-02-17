@@ -1,26 +1,11 @@
 import ThreeScene from "./components/ThreeScene";
+import Navbar from "./components/Navbar";
 import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-[999] bg-black/70 flex items-center justify-between px-[2vw] min-h-[50px]">
-        <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="h-10 w-auto" src="/images/ssrl.svg" alt="SSRL Logo" />
-        </div>
-        <ul className="flex items-center m-0 p-0">
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Missions</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Media</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Publications</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Software</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Partners</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Our Organization</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Apply</a></li>
-          <li><a className="block text-[#9d9d9d] text-center px-3 py-3.5 no-underline font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 hover:text-white" href="#">Contact Us</a></li>
-          <li><a className="block font-['Azeret_Mono',monospace] text-xs transition-colors duration-200 bg-white text-black font-extrabold px-3.5 py-1.5 ml-1 hover:bg-[#ddd]" href="#">Donate</a></li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <ThreeScene />
 

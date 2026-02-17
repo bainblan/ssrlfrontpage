@@ -256,8 +256,22 @@ export default function ThreeScene() {
       const segEnd = thresholds[idx + 1];
       const localT = smoothstep((scrollTop - segStart) / (segEnd - segStart));
 
-      camera.position.lerpVectors(waypoints[idx].pos, waypoints[idx + 1].pos, localT);
-      lookAtTarget.lerpVectors(waypoints[idx].lookAt, waypoints[idx + 1].lookAt, localT);
+      // If transitioning into the final bird's-eye waypoint, use a fixed start position
+      // so the camera doesn't drift with the orbiting planets
+      if (idx + 1 === waypoints.length - 1) {
+        const baseAngle = allAngles[visitOrder[idx]];
+        const rx = Math.sin(baseAngle);
+        const rz = Math.cos(baseAngle);
+        const fixedStart = {
+          pos: new THREE.Vector3(rx * cameraRadius, 1, rz * cameraRadius),
+          lookAt: new THREE.Vector3(rx * 40 + rz * tangentOffset, allY[visitOrder[idx]], rz * 40 - rx * tangentOffset),
+        };
+        camera.position.lerpVectors(fixedStart.pos, waypoints[idx + 1].pos, localT);
+        lookAtTarget.lerpVectors(fixedStart.lookAt, waypoints[idx + 1].lookAt, localT);
+      } else {
+        camera.position.lerpVectors(waypoints[idx].pos, waypoints[idx + 1].pos, localT);
+        lookAtTarget.lerpVectors(waypoints[idx].lookAt, waypoints[idx + 1].lookAt, localT);
+      }
       camera.lookAt(lookAtTarget);
     }
 
